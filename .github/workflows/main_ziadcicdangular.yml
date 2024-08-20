@@ -68,4 +68,3 @@ jobs:
           app-name: 'ZiadCICDAngular'
           slot-name: 'Production'
           package: .
-          
