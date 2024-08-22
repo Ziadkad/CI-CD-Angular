@@ -1,1 +1,39 @@
-<p>add-product works!</p>
+<div class="flex items-center justify-center p-12">
+  <div class="mx-auto w-full max-w-[550px] bg-white">
+    <h2 class="font-semibold text-3xl text-gray-600 mb-6" *ngIf="add">Add Product</h2>
+    <h2 class="font-semibold text-3xl text-gray-600 mb-6" *ngIf="!add">Update Product</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="mb-5">
+        <label for="productName" class="mb-3 block text-base font-medium text-[#07074D]">
+          Product Name
+        </label>
+        <input formControlName="productName" type="text" name="productName" id="productName" placeholder="Product Name"
+               class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+        <span
+          *ngIf="(submitted || productForm.get('productName')?.touched) && productForm.get('productName')?.errors?.['required']">Product Name is Required</span>
+        <br>
+        <span
+          *ngIf="(submitted || productForm.get('productName')?.touched) && productForm.get('productName')?.errors?.['minlength']">MinLength
+                    is 5 characters</span>
+      </div>
+      <div class="mb-5">
+        <label for="price" class="mb-3 block text-base font-medium text-[#07074D]">
+          Product Name
+        </label>
+        <input formControlName="price" type="number" name="price" id="price" placeholder="Product Name"
+               class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+        <span
+          *ngIf="(submitted || productForm.get('price')?.touched) && productForm.get('price')?.errors?.['required']">The price is Required</span>
+      </div>
+      <div>
+        <button type="submit"
+                class="hover:shadow-form rounded-md bg-blue-500 py-3 px-8 text-base font-semibold text-white outline-none">
+          <div *ngIf="add"> Add </div>
+          <div *ngIf="!add"> Update </div>
+        </button>
+      </div>
+    </form>
+
+  </div>
+
+</div>
