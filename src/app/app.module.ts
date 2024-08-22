@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 
@@ -13,8 +12,7 @@ import {ReactiveFormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     HomeComponent,
-    AddProductComponent,
-    NavbarComponent
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
